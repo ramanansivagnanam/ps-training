@@ -1,0 +1,11 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+    .header-routes {
+        .route {
+        margin: 4px;
+        padding: 4px;
+        }
+    }
+}
