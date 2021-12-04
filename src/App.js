@@ -1,24 +1,39 @@
 import "./App.css";
 import React from "react";
-import {
-  Routes,
-  Route
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage.componet";
 import Shopinglist from "./components/shoping-list/shopinglist.component";
-import Header from './components/header/header.component';
-import Signin from './pages/signin/signin.component.jsx';
+import Header from "./components/header/header.component";
+import Signin from "./pages/signin/signin.component.jsx";
+import { auth } from "./firebase-auth/firebase.auth.config";
 class App extends React.Component {
-  
+  constructor() {
+    super();
+    this.state = {
+      currentUser: null,
+    };
+  }
+
+  unsubsscribeUser = null;
+
+  componentDidMount() {
+    this.unsubsscribeUser = auth.onAuthStateChanged((user) => {
+      this.setState({ currentUser: user });
+    });
+  }
+  componentWillUnmount() {
+    this.unsubsscribeUser();
+  }
+
   render() {
     return (
       <div className="App">
-          <Header />
-          <Routes>
-             <Route exact path="/" element={<Homepage/>} />
-             <Route path="/item-details" element={<Shopinglist />}/>
-             <Route path="/sign-in" element={<Signin/>} />
-          </Routes>
+        <Header currentUser={this.state.currentUser} />
+        <Routes>
+          <Route exact path="/" element={<Homepage />} />
+          <Route path="/item-details" element={<Shopinglist />} />
+          <Route path="/sign-in" element={<Signin />} />
+        </Routes>
       </div>
     );
   }

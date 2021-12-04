@@ -1,0 +1,8 @@
+.sign-up-form-container{
+    display: flex;
+    flex-direction: column;
+    .form-elements{
+        display: flex;
+        flex-direction: column;
+    }
+}

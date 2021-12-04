@@ -6,8 +6,9 @@ import SignUpComponent from '../../components/sign-up-component/sign-up.componen
 export default function Signin() {
     return (
         <div className="sign-in-container">
-            <SignInComponent/>
             <SignUpComponent />
+            <SignInComponent/>
+
         </div>
     )
 }
