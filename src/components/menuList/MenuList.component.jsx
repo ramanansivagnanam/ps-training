@@ -1,5 +1,5 @@
 import React from "react";
-import { menuitems } from '../../data/menuiitems';
+import { menuitems } from '../../static_data/menuiitems';
 import MenuItem from "../menuItem/MenuItem.component";
 
 import './menuList.styles.scss';

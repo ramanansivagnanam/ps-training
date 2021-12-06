@@ -7,7 +7,8 @@ import { signInWithGoogle } from '../../firebase-auth/firebase.auth.config';
 export default function SignUpComponent() {
   return (
     <div className="sign-up-form-container">
-      <h1>SignUpComponent</h1>
+      <h2>Already have an account?</h2>
+      <h3>SignIN</h3>
       <Formik
         initialValues={{ email: "", password: "" }}
         validate={(values) => {
@@ -64,7 +65,7 @@ export default function SignUpComponent() {
               Submit
             </button>
             <button onClick={signInWithGoogle} disabled={isSubmitting}>
-              Google Sign IN
+              SIGN IN WITH GOOGLE
             </button>
           </form>
         )}
