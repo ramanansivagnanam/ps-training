@@ -8,6 +8,7 @@ import Signin from "./pages/signin/signin.component.jsx";
 import { auth, createFirebaseUser } from "./firebase-auth/firebase.auth.config";
 import { connect } from "react-redux";
 import { setUser } from "./redux/user_reducer/userActions";
+import CartitemsPage from "./pages/cartitems/cartitems-page.component";
 class App extends React.Component {
   
   unsubsscribeUser = null;
@@ -43,6 +44,7 @@ class App extends React.Component {
             path="/sign-in"
             element={<Signin />}
           />
+          <Route exact path="/cart-items" element={<CartitemsPage/>} />
         </Routes>
       </div>
     );

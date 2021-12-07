@@ -7,6 +7,9 @@
     display: flex;
     flex-direction: column;
     background: #fff;
+    .cart-empty-message{
+        margin:  50px auto;
+    }
     .cart-button{
         display: flex;
         align-items: center;
