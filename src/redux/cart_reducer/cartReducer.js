@@ -1,4 +1,5 @@
 import { cartActionTypes } from './cartActionTypes'
+import { updateQuantityIfExists } from './cartUtils';
 const INITIAL_STATE = {
     visible: false,
     cartItems: [],
@@ -14,8 +15,8 @@ export const cartReducer = (state = INITIAL_STATE, { type, payload}) => {
        case cartActionTypes.ADD_ITEM:
            return {
                ...state,
-               cartItems: [...state.cartItems, payload]
-           }   
+               cartItems : updateQuantityIfExists(state.cartItems, payload),
+           }
        default:
            return state;
    }
