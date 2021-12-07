@@ -1,15 +1,23 @@
 import React from "react";
-import { menuitems } from '../../static_data/menuiitems';
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectMenuItems } from "../../redux/home_reducer/home.selector";
 import MenuItem from "../menuItem/MenuItem.component";
 
-import './menuList.styles.scss';
+import "./menuList.styles.scss";
 
-export default function MenuList() {
+const MenuList = ({ menuItems}) => {
   return (
     <div className="menu-items">
-     { menuitems.map(({ id, itemName, imageSrc }) => { 
-         return <MenuItem key={id} itemName={itemName} imageSrc={imageSrc}/>
-     }) }
+      {menuItems.map(({ id, itemName, imageSrc }) => {
+        return <MenuItem key={id} itemName={itemName} imageSrc={imageSrc} />;
+      })}
     </div>
   );
-}
+};
+
+const mapStateToProps = createStructuredSelector({
+  menuItems : selectMenuItems 
+});
+
+export default connect(mapStateToProps)(MenuList);

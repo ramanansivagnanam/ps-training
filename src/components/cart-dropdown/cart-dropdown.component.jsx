@@ -13,8 +13,8 @@ const CartDropdown = ({ cartItems, dispatch }) => {
         <>
           <CartItems cartItems={cartItems} />
           <button className="cart-button"
-           onClick={() =>(naviagate("/cart-items"), dispatch(toggleDropdown()) )}
-          >Go to cart</button>{" "}
+           onClick={() =>{naviagate("/cart-items");dispatch(toggleDropdown()) }}
+          >Go to cart</button>
         </>
       ) : <span className="cart-empty-message">No items available</span>}
     </div>
