@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: space-around;
     .header-routes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         .route {
         margin: 4px;
         padding: 4px;

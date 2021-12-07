@@ -5,8 +5,8 @@ export default function ShopingPreview({ title, items }) {
   return (
     <div className="shoping-preview">
       <h1 className="title">{title}</h1>
-      {items.map(({ id, ...remaining }) => {
-        return <ShopingPreviewItem key={id} {...remaining} />;
+      {items.map((item) => {
+        return <ShopingPreviewItem key={item.id}  {...item} />;
       })}
     </div>
   );
