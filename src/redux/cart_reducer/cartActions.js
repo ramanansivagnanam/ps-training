@@ -8,6 +8,11 @@ const addItem = item => ({
     payload : item
 });
 
-export { toggleDropdown, addItem };
+const clearItem = item => ({
+    type : cartActionTypes.CLEAR_ITEM,
+    payload : item
+})
+
+export { toggleDropdown, addItem , clearItem };
 
 

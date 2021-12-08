@@ -1,0 +1,23 @@
+.cart-item-page-container {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 5px auto;
+  .column{
+      width: 35%;
+      .add-remove-items{
+          display: flex;
+          justify-content:space-around;
+          padding: 4px;
+          align-items:center;
+          .cart-item-add , .cart-item-remove{
+              padding: 8px;
+              cursor: pointer;
+          }
+      }
+  }
+  .cart-items-image{
+      height: 55px !important;
+      width: 55px !important;
+  }
+}

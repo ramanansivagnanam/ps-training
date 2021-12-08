@@ -17,6 +17,11 @@ export const cartReducer = (state = INITIAL_STATE, { type, payload}) => {
                ...state,
                cartItems : updateQuantityIfExists(state.cartItems, payload),
            }
+       case cartActionTypes.CLEAR_ITEM:
+           return {
+               ...state,
+               cartItems : state.cartItems.filter(cartItem => cartItem.id !== payload.id),
+           }
        default:
            return state;
    }
