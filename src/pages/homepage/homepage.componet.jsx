@@ -1,13 +1,13 @@
 import React from "react";
 import PageMenuContainer from "../../components/page-menu-container/pageMenuContainer";
-import './homepage.style.scss';
+import { HomePageContainer } from "./homepage.styled";
 
 export default function Homepage() {
   return (
     <>
-      <div className="homepage">
+      <HomePageContainer>
        <PageMenuContainer />
-      </div>
+      </HomePageContainer>
     </>
   );
 }
