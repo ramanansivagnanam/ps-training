@@ -38,5 +38,16 @@ export const createFirebaseUser = async (userAuth, ...additionalData) => {
     }
     return userRef;
 }
+export const createShopItemsDocuments = async (collectionKey, collectionObject) => {
+    const collectionRef = firestore.collection(collectionKey);
+    const batch = firestore.batch();
+    collectionObject.forEach(collection => {
+        const newRef = collectionRef.doc();
+        batch.set(newRef, collection);
+    });
+    return await batch.commit()
+
+    console.log(collectionRef, typeof collectionObject)
+}
 
 export default firebase;

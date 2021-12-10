@@ -6,9 +6,11 @@ import Shopinglist from "./components/shoping-list/shopinglist.component";
 import Header from "./components/header/header.component";
 import Signin from "./pages/signin/signin.component.jsx";
 import { auth, createFirebaseUser } from "./firebase-auth/firebase.auth.config";
-import { connect } from "react-redux";
+import { connect  } from "react-redux";
+import { createStructuredSelector } from 'reselect';
 import { setUser } from "./redux/user_reducer/userActions";
 import CartitemsPage from "./pages/cartitems/cartitems-page.component";
+import { selectCurrentUser } from "./redux/user_reducer/user.selector";
 class App extends React.Component {
   
   unsubsscribeUser = null;
@@ -51,8 +53,8 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
